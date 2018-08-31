@@ -1,9 +1,8 @@
 ---
  - name: update the system
    become: true
-   yum:
-     name: "*"
-     state: latest
+   yum: name=* state=latest
+   when: ansible_os_family == "Redhat"
  - name: setup user passwordless on target
    become: true
    lineinfile:
@@ -56,9 +55,5 @@
      - dhcp-libs.x86_64
  - name: Disable NetworkManager service
    become: true
-   service:
-     name: NetworkManager
-     state: stopped
-     enabled: no
-
+   service: name=NetworkManager state=stopped enabled=no
 

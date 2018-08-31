@@ -1,37 +1,3 @@
-cat deploy-vm.csv | awk -F' ' '{print $2}'
-while read f; do echo $f| awk -F' ' '{print $1}'; echo $f| awk -F' ' '{print $2}' done < deploy-vm.csv 
-while read f; do sh -c 'echo $f| awk -F' ' '{print $1}'; echo $f| awk -F' ' '{print $2}'' done < deploy-vm.csv 
-while read f; do sh -c 'echo $f| awk -F' ' '{print $1}'; echo $f| awk -F' ' '{print $2}''; done < deploy-vm.csv 
-while read f; do echo $f| awk -F' ' '{print $1}'; echo $f| awk -F' ' '{print $2}'; done < deploy-vm.csv 
-while read f; do target=$f| awk -F' ' '{print $1}'; IP=$f| awk -F' ' '{print $2}'; done < deploy-vm.csv 
-while read f; do target=$f| awk -F' ' '{print $1}'; IP=$f| awk -F' ' '{print $2}'; echo $target  $IP ; done < deploy-vm.csv 
-while read f; do target="$f| awk -F' ' '{print $1}'"; IP="$f| awk -F' ' '{print $2}'"; echo $target  $IP ; done < deploy-vm.csv 
-while read f; do target=$($f| awk -F' ' '{print $1}'"); IP="$f| awk -F' ' '{print $2}'"; echo $target  $IP ; done < deploy-vm.csv 
-while read f; do target=$($f| awk -F' ' '{print $1}'); IP="$f| awk -F' ' '{print $2}'"; echo $target  $IP ; done < deploy-vm.csv 
-while read f; do target=$($f| awk -F' ' '{print $1}'); IP=$($f| awk -F' ' '{print $2}'); echo $target  $IP ; done < deploy-vm.csv 
-while read f; do target=$($f| awk -F' ' '{print $1}'); IP=$($f| awk -F' ' '{print $2}'); echo "$target  $IP" ; done < deploy-vm.csv 
-while read f; do target=$($f| awk -F' ' '{print $1}'); IP=$($f| awk -F' ' '{print $2}') ; done < deploy-vm.csv 
-cat deploy-vm.csv | target=$(awk -F' ' '{print $1}') 
-cat deploy-vm.csv | target=$(awk -F' ' '{print $1}');echo $target 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); echo "$target  $IP" ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); echo "ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vm_full.yml" ; done < deploy-vm.csv 
-cat deploy-vm.csv 
-vi deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); echo "ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vm_full.yml" ; done < deploy-vm.csv 
-ansible-playbook -e target=vm-01 playbooks/vc_remove_guest.yml 
-ansible-playbook -e target=vm-04 playbooks/vc_remove_guest.yml 
-ansible-playbook -e target=vm-05 playbooks/vc_remove_guest.yml 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); echo "ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vm_full.yml" ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vm_full.yml' & ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vm_full.yml &' ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbook/vc_create_guest_vmware_full.yml &' ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml &' ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); echo "sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml &'" ; done < deploy-vm.csv 
-sh -c 'ansible-playbook -e target=vm-01 -e IP=192.168.1.50 playbooks/vc_create_guest_vmware_full.yml &'
-ansible-playbook -e target=vm-01 playbooks/vc_remove_guest.yml 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml & sleep 7' ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml &&' ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml && echo "complete"' ; done < deploy-vm.csv 
 while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml ' & ; done < deploy-vm.csv 
 while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml ' &  done < deploy-vm.csv 
 while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml &  done < deploy-vm.csv 
@@ -997,4 +963,38 @@ pwd
 ls -lrt
 rm "v"
 ls -lrt
+sudo shutdown -h now
+pwd
+git status
+git --version
+sudo yum -y update git
+sudo su -
+pwd
+git init
+git status
+git branch
+pwd
+viv .gitignore
+vi .gitignore
+git status
+cat .bashrc 
+git add -A
+git status
+clear
+git commit -m "Initial Commit Ansible_lab"
+git --global user.email "vbecerraar@gmail.com"
+git config --global user.email "vbecerraar@gmail.com"
+git config --global user.name "victorbecerragit"
+git config
+git list
+git config --list
+git brach
+git branch
+git commit -m "Initial Commit Ansible_lab"
+pwd
+git status
+git remote add origin https://github.com/victorbecerragit/Ansible-Labs.git
+git config --list
+git push -u origin master
+ping google.com
 sudo shutdown -h now

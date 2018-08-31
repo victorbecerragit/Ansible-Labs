@@ -2,3 +2,13 @@
   gather_facts: no
   tasks:
   - ping:
+
+  - name : copy existing kernel image before compile new one
+    template : /boot/
+    backup : yes
+  - name : compile new kernel after removed Nmcli and dhcp client
+
+     # dracut -fv
+
+    notify: reboot server
+
