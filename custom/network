@@ -1,0 +1,5 @@
+# Created by anaconda
+HOSTNAME=ansible.testlab.org
+DNS1=192.168.1.10
+DNS2=8.8.8.8
+SEARCH=testlab.org

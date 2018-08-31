@@ -1,0 +1,64 @@
+---
+ - name: update the system
+   become: true
+   yum:
+     name: "*"
+     state: latest
+ - name: setup user passwordless on target
+   become: true
+   lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%sysadmin\s'
+      line: '%sysadmin ALL=(ALL) NOPASSWD: ALL'
+ - name: Enable AddressFamily inet on /etc/ssh/sshd_config , required to disable ipv6
+   become: true
+   lineinfile:
+      path: /etc/ssh/sshd_config
+      state: present
+      regexp: '^%AddressFamily\s'
+      line: 'AddressFamily inet'
+   notify:
+      - restart sshd
+ - name: Add ipv6 disable on /etc/sysctl.conf, Set ipv6 kernel parameters disabled
+   become: true
+   sysctl: name={{ item.pname }} value={{ item.value }} state=present sysctl_file=/etc/sysctl.conf sysctl_set=yes reload=yes
+   with_items:
+     - { pname: 'net.ipv6.conf.all.disable_ipv6', value: '1' }
+     - { pname: 'net.ipv6.conf.default.disable_ipv6', value: '1' }
+ - name: Update /etc/sysconfig/network file on target
+   become: true
+   template:
+     src: "{{ net_template }}"
+     dest: /etc/sysconfig/network
+     backup: yes
+ - name: Update /etc/hosts file
+   become: true
+   lineinfile:
+     dest: /etc/hosts
+     state: present
+     regexp: '{{ ansible_default_ipv4.address }}\s'
+     line: '{{ ansible_default_ipv4.address }}    {{ ansible_fqdn }}'
+ - name: Install required pkgs
+   become: true
+   yum:
+     name:
+       - "{{ perl_pkg }}"
+       - "{{ bindu_pkg }}"
+       - "{{ net_pkg }}"
+     state: latest
+ - name: Uninstall dhcp packages
+   become: true
+   yum: name={{ item }} state=absent
+   with_items:
+     - dhclient.x86_64
+     - dhcp-common.x86_64
+     - dhcp-libs.x86_64
+ - name: Disable NetworkManager service
+   become: true
+   service:
+     name: NetworkManager
+     state: stopped
+     enabled: no
+
+

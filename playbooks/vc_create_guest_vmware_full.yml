@@ -1,0 +1,47 @@
+---
+- name: create some vms
+  hosts: localhost
+  connection: local
+  vars: 
+    vc_hostname: vcsa.testlab.org
+    username: administrator@testlab.org 
+    password: f0ll0wUP!
+    datacenter: dev-lab
+    datastore: datastore1
+    network: "VMnetwork"
+  tasks:
+    - name: create vms from template using vmware_guest
+      vmware_guest:
+        hostname: "{{ vc_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        esxi_hostname: esxi.testlab.org
+        datacenter: "{{ datacenter }}"
+        template: centos7-mini-gold-full
+        folder: "{{ datacenter }}/vm"
+        name: "{{ target }}"
+        state: present
+        disk:
+          - size_gb: 8
+            type: thin
+            datastore: "{{ datastore }}"
+        networks: 
+        - name: VM Network
+          ip: "{{ IP }}"  
+          netmask: 255.255.255.0
+          gateway: 192.168.1.1
+          domain: testlab.org 
+        hardware:
+          memory_mb: 512
+          num_cpus: 1
+          osid: Centos64Guest
+          scsi: "paravirtual"
+        resource_pool: ansible-pool
+        wait_for_ip_address: True
+      delegate_to: localhost
+      register: deploy
+
+    - name: IP address info
+      debug:
+        msg: "{{ deploy.instance.ipv4 }}    {{ target }}"

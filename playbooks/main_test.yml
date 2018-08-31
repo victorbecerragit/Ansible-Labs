@@ -1,0 +1,4 @@
+- hosts: web , 192.168.1.*
+  gather_facts: no
+  tasks:
+  - ping:

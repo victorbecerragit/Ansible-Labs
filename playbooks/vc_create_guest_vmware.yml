@@ -1,0 +1,30 @@
+---
+- name: create some vms
+  hosts: localhost
+  connection: local
+  vars: 
+    vc_hostname: vcsa.testlab.org
+    username: administrator@testlab.org 
+    password: f0ll0wUP!
+    datacenter: dev-lab
+  tasks:
+    - name: create vms from template using vmware_guest
+      vmware_guest:
+        hostname: "{{ vc_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        template: centos7-mini-gold-full
+        folder: "{{ datacenter }}/vm"
+        name: vm-01
+        state: poweredon
+        hardware:
+          memory_mb: 512
+          num_cpus: 1
+          osid: Centos64Guest
+          scsi: "paravirtual"
+        esxi_hostname: esxi.testlab.org
+        datacenter: "{{ datacenter }}"
+        resource_pool: ansible-pool
+      delegate_to: localhost
+      register: deploy

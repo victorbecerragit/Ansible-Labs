@@ -1,0 +1,24 @@
+---
+- name: Find Guest's Folder using name
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Get VM facts
+      vmware_guest_facts:
+        hostname: vcsa.testlab.org
+        username: administrator@testlab.org
+        password: f0ll0wUP!
+        validate_certs: no
+        datacenter: dev-lab
+        folder: /vm
+        #name: "centos-vm-mini"
+        name: "vm-01"
+      delegate_to: localhost
+      register: vm_facts
+    - name: debug vm_facts
+      debug:
+        var: vm_facts
+ #     result:
+ #       "{{ vm_facts.results|map(attribute='instance.ipv4')|list }}"
+
+        #var: result

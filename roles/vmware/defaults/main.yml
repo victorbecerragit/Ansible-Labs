@@ -1,0 +1,9 @@
+---
+vc_hostname: "vcsa.testlab.org"
+username: "administrator@testlab.org"
+password: "f0ll0wUP!"
+datacenter: "dev-lab"
+folder: "vm"
+datastore: "datastore1"
+esx_hostname: "esxi.testlab.org"
+deploy_vm: files/deploy-vm.csv

@@ -1,0 +1,20 @@
+---
+- name: Find Guest's Folder using name
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: vmware guest by name
+      vmware_guest_find:
+        datacenter: dev-lab
+        hostname: 192.168.1.40
+        username: administrator@testlab.org
+        password: f0ll0wUP!
+        validate_certs: no
+        name: vm-01
+      delegate_to: localhost
+
+      register: vm_folder
+
+    - name: debug vm_folder
+      debug:
+        var: vm_folder

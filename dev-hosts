@@ -1,0 +1,23 @@
+[local]
+localhost ansible_connection=local
+
+[app]
+192.168.1.50
+192.168.1.51
+
+[test]
+centos-vm-mini
+192.168.1.11
+
+[web]
+192.168.1.11
+
+[vms]
+vm-01
+vm-02
+vm-01.testlab.org
+vm-02.testlab.org
+
+[vcsa]
+vcsa.testlab.org
+

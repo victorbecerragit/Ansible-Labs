@@ -1,0 +1,28 @@
+---
+- name: create some vms
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: create vms from template
+      vsphere_guest:
+        vcenter_hostname: 192.168.1.40
+        username: administrator@testlab.org
+        password: f0ll0wUP!
+        validate_certs: no
+        from_template: true
+        template_src: centos7-mini-gold-full 
+        resource_pool: "ansible-pool"
+        guest: vm-01
+        vm_extra_config:
+          vcpu_hotadd: 'no'
+          mem_hotadd: 'no'
+          notes: 'Ansible Created' 
+          folder: vm
+        vm_hardware:
+          memory_mb: 512
+          num_cpus: 1
+          osid: Centos64Guest
+          scsi: "paravirtual"
+        esxi:
+          datacenter: dev-lab
+          hostname: esxi.testlab.org

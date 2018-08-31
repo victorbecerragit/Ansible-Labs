@@ -1,0 +1,46 @@
+---
+- name: Update OS, setup dns testlab.org , setup passwordless, install additional packages, disable NetworkManager service
+  hosts: 192.168.1.11
+  become: true
+  vars:
+    remote_dir: /etc/sysconfig/network
+    file_template: /home/sysadmin/templates/network.j2
+    perl_pkg: perl
+    bindu_pkg: bind-utils
+    net_pkg: net-tools
+  tasks:
+    - name: update the system
+      yum:
+        name: "*"
+        state: latest
+    - name: setup user passwordless on target
+      lineinfile:
+          path: /etc/sudoers
+          state: present
+          regexp: '^%sysadmin\s'
+          line: '%sysadmin ALL=(ALL) NOPASSWD: ALL'
+    - name: Update network file with remote hostname
+      #copy:
+      template:
+        #content: "{{ ansible_fqdn }}({{ ansible_default_ipv4.address }}) has been customized by Ansible\n"
+        src: "{{ file_template }}"
+        dest: "{{ remote_dir }}"
+        backup: yes
+    - name: Update /etc/hosts file
+      lineinfile:
+        dest: /etc/hosts
+        state: present
+        regexp: '{{ ansible_default_ipv4.address }}\s'
+        line: '{{ ansible_default_ipv4.address }}    {{ ansible_fqdn }}    {{ ansible_fqdn }}.testlab.org'
+    - name: Install required pkgs
+      yum:
+        name:
+          - "{{ perl_pkg }}" 
+          - "{{ bindu_pkg }}" 
+          - "{{ net_pkg }}"
+        state: latest
+    - name: Disable NetworkManager service
+      service:
+        name: NetworkManager
+        state: stopped
+        enabled: no

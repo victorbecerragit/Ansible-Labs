@@ -1,0 +1,33 @@
+---
+- name: create vms from template using vmware_guest
+  vmware_guest:
+    hostname: "{{ vc_hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    validate_certs: False
+    template: centos7-mini-gold-full
+    folder: "{{ datacenter }}/vm"
+    name: vm-01
+    state: poweredon
+    hardware:
+      memory_mb: 512
+      num_cpus: 1
+      osid: Centos64Guest
+      scsi: "paravirtual"
+    esxi_hostname: "{{ esx_hostname }}"
+    datacenter: "{{ datacenter }}"
+    resource_pool: ansible-pool
+  tags: manual-deploy
+  delegate_to: localhost
+  register: manual-deploy
+
+- name: create 5 vms from automated script
+  script: vm_deploy.sh
+  tags: full-deploy 
+  delegate_to: localhost
+  register: full-deploy
+
+- name: delete 5 vms created from automated script
+  script: vm_clear.sh
+  tags: full-delete
+

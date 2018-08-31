@@ -1,0 +1,6 @@
+---
+hosts: localhost
+connection: local
+  - name: Deploy VM and setup post-install
+     vc_create_guest.yml
+     setup_custom.yml

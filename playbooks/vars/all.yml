@@ -1,0 +1,10 @@
+folder: vm
+datacenter: dev-lab
+esxi: 192.168.1.45
+datastore: datastore1
+pri_domain_name: testlab.org
+hostname: 192.168.1.40
+username: administrator@testlab.org
+password: f0ll0wUP!
+vc_hostname: vcsa.testlab.org
+vm_pool: ansible-pool

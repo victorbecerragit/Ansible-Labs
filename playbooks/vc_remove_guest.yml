@@ -1,0 +1,25 @@
+---
+- name: stop and delete created vms
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: stop vms 
+      vsphere_guest:
+        vcenter_hostname: 192.168.1.40
+        username: administrator@testlab.org
+        password: f0ll0wUP!
+        validate_certs: no
+        guest: "{{ target }}"
+        state: powered_off
+      delegate_to: localhost
+
+    - name: delete vms
+      vsphere_guest:
+        vcenter_hostname: 192.168.1.40
+        username: administrator@testlab.org
+        password: f0ll0wUP!
+        validate_certs: no
+        guest: "{{ target }}"
+        state: absent
+        force: yes
+      delegate_to: localhost
