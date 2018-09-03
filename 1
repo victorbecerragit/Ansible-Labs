@@ -1,0 +1,12 @@
+- hosts: web , 192.168.1.*
+  gather_facts: no
+  tasks:
+  - ping:
+
+  - name : copy existing kernel image before compile new one
+    become: true
+    copy : src="{{ src_kernel }}" dest="{{ src_kernel }}".backup
+   #- name : compile new kernel after removed Nmcli and dhcp client
+     # dracut -fv
+    #notify: reboot server
+

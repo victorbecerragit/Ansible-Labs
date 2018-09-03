@@ -1,57 +1,3 @@
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml ' & ; done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); sh -c 'ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml ' &  done < deploy-vm.csv 
-while read f; do target=$( echo $f| awk -F' ' '{print $1}'); IP=$( echo $f| awk -F' ' '{print $2}'); ansible-playbook -e target=$target -e IP=$IP playbooks/vc_create_guest_vmware_full.yml &  done < deploy-vm.csv 
-cat /etc/networks
-mkdir scripts
-cd scripts/
-vi vm_deploy.sh
-chmod +x vm_deploy.sh 
-ls -lrt
-cp vm_deploy.sh vm_clear.sh
-vi vm_clear.sh
-vi vm_clear.sh 
-cp ../deploy-vm.csv .
-./vm_clear.sh 
-vi vm_clear.sh 
-ls -lrt ../playbooks/vc_remove_guest.yml 
-vi vm_clear.sh 
-./vm_clear.sh 
-vi deploy-vm.csv 
-vi vm_deploy.sh 
-./vm_deploy.sh 
-./vm_clear.sh 
-sudo su -
-pwd
-cd playbooks/
-ls -lrt
-cat main_test.yml
-pwd
-vi main_test.yml 
-cd ..
-ansible --syntax-check playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-ansible-playbook  playbooks/main_test.yml 
-ansible-playbook  playbooks/main_test.yml -vvv
-ansible-playbook  playbooks/main_test.yml -vvv web
-ansible-playbook  -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook  -i dev-hosts playbooks/main_test.yml -vvv 
-cat dev-hosts 
-ansible -i dev-hosts -m ping
-ansible -i dev-hosts -m ping 192.*
-nslookup vcsa.testlab.org
-ping 192.168.1.40
-ping 192.168.1.45
-ansible -i dev-hosts -m ping 192.*
-cat /etc/sysconfig/network-scripts/ifcfg-eth0 
-ansible -i dev-hosts -m ping 192.*
-vi dev-hosts 
-ansible -i dev-hosts -m ping *testlab.org
-ansible-galaxy
-ansible-galaxy -v
-ansible-galaxy -version
-ansible-galaxy init roles/apache --offline
-cd roles/
 ls -lrt
 cd apache/
 ls
@@ -998,3 +944,57 @@ git config --list
 git push -u origin master
 ping google.com
 sudo shutdown -h now
+ping google.com
+sudo su -
+pwd
+git status
+git config --list
+git push -u origin master 
+git status
+git branch
+sudo su -
+pwd
+ls -lrt
+cd playbooks/
+ls
+ls -lrt
+cd vars/
+ls
+cat all.yml 
+pwd
+cd ..
+ls
+vi main_test.yml 
+cd ..
+cd roles/common/handlers/
+vi main.yml 
+pwd
+ls -lrt
+vi main.yml 
+cd ..
+cd playbooks/
+vi main_test.yml 
+cd ..
+pwd
+cd roles/common/tasks/
+vi main.yml 
+pwd
+cd ..
+ansible-playbook --syntax-check roles/common/run.yml 
+vi roles/common/tasks/main.yml 
+ansible-playbook --syntax-check roles/common/run.yml 
+pwd
+git status
+git add -A
+git status
+git commit -m 
+git commit -m "Some updates to roles/common"
+git status
+history |grep push
+pwd
+git branch
+git push -u origin master
+which shutdown
+ls -ltr /sbin/shutdown 
+sudo /sbin/shutdown -h now
+sudo su -

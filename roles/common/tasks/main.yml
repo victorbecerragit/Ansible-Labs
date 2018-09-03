@@ -56,4 +56,24 @@
  - name: Disable NetworkManager service
    become: true
    service: name=NetworkManager state=stopped enabled=no
+ - name: copy current image kernel
+   shell:
+     'sudo cp /boot/initramfs-`uname -r`.img /boot/initramfs-`uname -r`.img.backup'
+ - name : compile new kernel after removed Nmcli and dhcp client
+   shell:
+     'sudo dracut -fv'
+   register: task_result
+ - name: Reboot immediately if there was a change in the kernel image.
+   shell: 'sleep 5 && sudo /sbin/shutdown -r now'
+   async: 1
+   poll: 0
+   when: task_result is changed
+ - name: Wait for the reboot to complete if there was a change.
+   wait_for_connection:
+     connect_timeout: 20
+     sleep: 5
+     delay: 7
+     timeout: 300
+   when: task_result is changed
+ - ping: 
 
