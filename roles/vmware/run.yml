@@ -2,16 +2,14 @@
 - hosts: localhost
   connection: local
   
-#  roles:
-#   - role: vmware
-#   - role: common
+  roles:
   tasks:
-    - include_role: 
-        name: vmware
+    - include_role:
+        name: vmware 
       tags: 
         - full-deploy
         - full-delete
     - include_role: 
         name: common
       tags:
-        - full-deploy
+        - common

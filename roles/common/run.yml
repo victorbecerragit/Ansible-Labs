@@ -1,4 +1,4 @@
-- hosts: vms , 192.168.1.5*
-
+- hosts: vms
+  become: true
   roles:
-   - common
+   - { role: common, tags: [ common ] }

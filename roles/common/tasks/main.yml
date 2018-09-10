@@ -3,6 +3,7 @@
    become: true
    yum: name=* state=latest
    when: ansible_os_family == "Redhat"
+   #tags: full-deploy
  - name: setup user passwordless on target
    become: true
    lineinfile:
@@ -10,6 +11,7 @@
       state: present
       regexp: '^%sysadmin\s'
       line: '%sysadmin ALL=(ALL) NOPASSWD: ALL'
+   #tags: full-deploy
  - name: Enable AddressFamily inet on /etc/ssh/sshd_config , required to disable ipv6
    become: true
    lineinfile:

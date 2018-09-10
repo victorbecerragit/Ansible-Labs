@@ -7,3 +7,4 @@ folder: "vm"
 datastore: "datastore1"
 esx_hostname: "esxi.testlab.org"
 deploy_vm: files/deploy-vm.csv
+vm_template_centos: "Centos-mini-full"

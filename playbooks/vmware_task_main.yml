@@ -6,7 +6,7 @@
     password: "{{ password }}"
     validate_certs: False
     #template: centos7-mini-gold-full
-    template: centos-mini-full
+    template: "{{ vm_template_centos }}"
     folder: "{{ datacenter }}/vm"
     name: vm-01
     state: poweredon

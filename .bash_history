@@ -1,261 +1,3 @@
-ls -lrt
-cd apache/
-ls
-ls -lrt
-pwd
-cd templates/
-ls
-ls -lert
-ls -lrt
-cd ..
-tree .
-sudo yum install tree
-tree .
-cat defaults/main.yml 
-cat handlers/main.yml 
-cat meta/main.yml 
- 
-cat tests/inventory 
-cat tests/test.yml 
-cat vars/main.yml 
-pwd
-tree .
-cd ..
-ansible-galaxy install -p roles -r install-roles.yml
-sudo yum install wget
-wget http://materials.example.com/roles-library/student.bash_env.tgz
-pwd
-cd roles/
-ls -lrt
-cd apache/
-cd tasks/
-ls -lrt
-vi main.yml 
-cd ..
-cd templates/
-cd ..
-cd handlers/
-ls -lrt
-vi main.yml 
-cd ..
-cd files/
-ls -lrt
-vi html
-ls -lrt
-mkdir html
-echo "simple index" >> html/index.html
-cd ..
-cd templates/
-ls -lrt
-cat ../tasks/main.yml 
-vi vhost.conf.j2
-cd ..
-vi dev-hosts 
-ansible -i dev-hosts -m ping [web]
-ansible -i dev-hosts -m ping web
-ansible-playbook roles/apache/tasks/main.yml 
-ansible-playbook roles/apache/tasks/main.yml -vv
-cd roles/
-ls
-cd apache/
-ls -lrt
-cd tasks/
-ls
-ls -rlt
-vi main.yml 
-ansible-playbook roles/apache/tasks/main.yml -vv
-ansible-playbook main.yml -vv
-ls
-cd ..
-ls
-cd defaults/
-ls
-cat main.yml 
-cd ..
-cd templates/
-ls
-cat vhost.conf.j2 
-cp vhost.conf.j2 ../defaults/
-cd ../defaults/
-cat vhost.conf.j2 
-cat vhost.conf.j2 >> main.yml 
-ansible-playbook main.yml -vv
-pwd
-cd ..
-ls -lrt
-cd ..
-ls
-cd ..
-ansible-playbook roles/apache/defaults/main.yml -vv
-ls -lrt /etc/ansible/roles/
-pwd
-cat ansible.cfg 
-vi ansible.cfg 
-ansible -version
-ansible --version
-ansible-playbook roles/apache/defaults/main.yml -vv
-vi roles/apache/defaults/main.yml 
-ansible-playbook roles/apache/defaults/main.yml -vv web
-ansible-playbook -i dev-hosts web roles/apache/defaults/main.yml -vv 
-ansible-playbook -i dev-hosts  roles/apache/defaults/main.yml -vv 
-ansible-playbook -i dev-hosts  roles/apache/defaults/main.yml -vv web
-ansible-playbook -i dev-hosts  roles/apache/defaults/main.yml web -vv
-ansible-playbook web  roles/apache/defaults/main.yml -vv
-ansible-playbook   roles/apache/defaults/main.yml -vv
-cat inventory 
-vi inventory
-ansible-playbook   roles/apache/defaults/main.yml -vv
-ansible-playbook  -i dev-hosts roles/apache/defaults/main.yml -vv
-vi roles/apache/defaults/main.yml 
-ansible-playbook   roles/apache/defaults/main.yml -vv
-vi roles/apache/defaults/main.yml 
-ansible-doc pre-tasks
-ansible-doc pre-task
-clear
-cat ansible.cfg 
-vi roles/apache/defaults/main.yml 
-vi roles/apache/defaults/main_test.yml
-ansible-playbook roles/apache/defaults/main_test.yml -vv
-vi roles/apache/defaults/main_test.yml
-ansible-playbook roles/apache/defaults/main_test.yml -vv
-ansible-playbook -i dev-hosts roles/apache/defaults/main_test.yml -vv
-cat roles/apache/defaults/main.yml 
-cat roles/apache/defaults/main_test.yml 
-vi roles/apache/defaults/main.yml
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml 
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vv
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvvvv
-cd roles/apache/templates/
-ls
-rm vhost.conf.j2 
-cd ..
-cd ~
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvvvv
-cd roles/apache/
-ls -lrt
-cd templates/
-ls
-cd ..
-cd tasks/
-ls -lrt
-cat main.yml 
-vi main.yml 
-clear
-cd ..
-ls -lrt
-cd defaults/
-ls
-ls -lrt
-rm vhost.conf.j2 
-pwd
-cd !
-cd ~
-cd templates/
-ls -lrt
-pwd
-cd ..
-cd roles/apache/templates/
-ls -lrt
-vi vhosts.conf.j2
-cd ..
-pwd
-ansible-playbook roles/apache/defaults/main.yml -vv
-vi roles/apache/tasks/main.yml 
-ansible-playbook roles/apache/defaults/main.yml -vv
-pwd
-cd roles/apache/
-ls -lrt
-cd templates/
-ls
-cd .
-cd ..
-cd defaults/
-ls -lrt
-mv main_test.yml ../../../playbooks/
-ls -lrt
-cd ~
-ansible-playbook roles/apache/defaults/main.yml -vv
-pwd
-cd roles/apache/defaults/
-ls -lrt
-cat main.yml 
-vi main.yml 
-cd ~
-ansible-playbook roles/apache/defaults/main.yml -vv
-cd roles/apache/
-ls -lrt
-cd tasks/
-ls
-cat main.yml 
-cd ..
-ls -lrt
-cd vars/
-ls
-cat main.yml 
-cd ..
-cd tests/
-ls
-ls -lrt
-cat inventory 
-cd ..
-cd handlers/
-ls
-cat main.yml 
-cd ..
-cd files/
-ls
-cd html/
-ls
-cd ..
-cd templates/
-ls
-cat vhosts.conf.j2 
-cd ..
-ls -lrt
-cd defaults/
-ls
-cd tasks
-cd ..
-cd tasks/
-vi main.yml 
-pwd
-cd ..
-pwd
-cd ..
-ansible-playbook roles/apache/defaults/main.yml -vvv
-vi roles/apache/defaults/main.yml
-ansible-playbook roles/apache/defaults/main.yml -vvv
-vi roles/apache/defaults/main.yml
-pwd
-cd roles/apache/templates/
-ls -lrt
-cat > vhosts.conf.j2 
-vi vhosts.conf.j2 
-cd ~
-ansible-playbook roles/apache/defaults/main.yml -vvv
-vi roles/apache/defaults/main.yml
-ansible-playbook roles/apache/defaults/main.yml -vvv
-cd roles/apache/templates/
-vi vhosts.conf.j2 
-cd ~
-ansible-playbook roles/apache/defaults/main.yml -vvv
-rm roles/apache/templates/vhosts.conf.j2 
-ansible-playbook roles/apache/defaults/main.yml -vvv
-clear
-vi roles/apache/defaults/main.yml 
-ansible-playbook roles/apache/defaults/main.yml -vvv
-cat inventory 
-cat dev-hosts 
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-cd roles/apache/
-ls -lrt
-tree .
-rm -rf tests/
-tree .
-cd ~
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-vi roles/apache/tasks/main.yml 
-vi roles/apache/handlers/main.yml 
 vi roles/apache/meta/main.yml 
 rm -rf roles/apache/meta/
 ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
@@ -997,4 +739,262 @@ git push -u origin master
 which shutdown
 ls -ltr /sbin/shutdown 
 sudo /sbin/shutdown -h now
+sudo su -
+pwd
+git status
+git branch
+git add -A
+git status
+pwd
+cat .gitignore 
+ls -lrt
+cd playbooks/
+ls
+ls -lrt
+cat main_test.yml 
+cat setup_custom.yml 
+vi main_test.yml 
+ls -lrt /boot/initramfs-`uname -r`.img
+vi main_test.yml 
+ansible-doc -l copy
+ansible-doc copy
+vi main_test.yml 
+ansible-playbook --syntax-check main_test.yml 
+cd ..
+ansible-playbook -i dev-hosts playbooks/main_test.yml 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml 
+cd playbooks/
+ls -lrt
+cat setup_custom.yml
+cd ..
+ls -lrt
+cd group_vars/
+ls
+vi all.yml 
+cat ../playbooks/main_test.yml 
+vi all.yml 
+cat all.yml 
+cd ..
+cd playbooks/
+vi main_test.yml 
+cd ..
+ansible-playbook -i dev-hosts playbooks/main_test.yml 
+ls -lrt /boot/initramfs-`uname -r`.img
+vi group_vars/
+vi group_vars/all.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml 
+pwd
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+cat ansible.cfg 
+ansible -i dev-hosts web -a "sh -c 'uname -a'"
+ansible -i dev-hosts web -a "sh -c 'uname -a ; sudo cp /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img.backup'"
+vi playbooks/main_test.
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+cat ansible.cfg 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+ansible-playbook --syntax-check playbooks/main_test.yml 
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+cat group_vars/all.yml 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+cat ansible.cfg 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+history |grep cp
+ansible -i dev-hosts web -a "sh -c 'uname -a ; sudo cp /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img.backup'"
+vi playbooks/main_test.yml 
+ansible-doc shell
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook --syntax-check playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+cp roles/common/handlers/main.yml 
+cp roles/common/handlers/main.yml .
+mkdir handles
+mv main.yml handles/
+cd handles/
+cat main.yml 
+cd ..
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+mv handles handlers
+ls -lrt
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+cat handlers/main.yml 
+cd ..
+pwd
+cd ~
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
+pwd
+vi roles/common/tasks/main.yml 
+vi playbooks/main_test.yml 
+ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
+vi roles/common/tasks/main.yml 
+vi roles/vmware/run.yml 
+cat roles/common/tasks/main.yml 
+cat playbooks/main_test.yml 
+cat dev-hosts 
+vi roles/vmware/run.yml 
+vi roles/common/run.yml 
+cat dev-hosts 
+vi dev-hosts 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+ansible-playbook -i dev-hosts  roles/vmware/run.yml -vv
+vi roles/common/tasks/main.yml 
+ansible-playbook --list tags roles/vmware/run.yml 
+ansible-playbook --list-tags roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml -tags "full-deploy"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy"
+cat roles/vmware/run.yml 
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
+ansible-playbook --syntax-check roles/vmware/run.yml
+cat ansible.cfg 
+vi ansible.cfg 
+pwd
+cd roles/
+ls
+ls -lrt
+cd ..
+ansible-playbook --syntax-check roles/vmware/run.yml
+clear
+vi roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+vi roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+vi roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+pwd
+cat ansible.cfg 
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+pwd
+cd roles/vmware/
+ls -lrt
+cd ..
+pwd
+cd common/
+ls
+cd ..
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
+ansible-playbook --syntax-check roles/common/run.yml 
+cat roles/common/run.yml
+ansible-playbook -i dev-hosts roles/common/run.yml
+ansible-playbook -i dev-hosts roles/common/run.yml -vv
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/common/run.yml -vv
+vi dev-hosts 
+ansible-playbook -i dev-hosts roles/common/run.yml -vv
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/common/run.yml -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete
+ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete -vvv
+cat roles/vmware/run.yml 
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete -vvv
+ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-deploy
+pwd
+git status
+git add -A
+git status
+git commit -m "Updates roles/vmware and roles/common"
+history |grep push
+git push -u origin master
+ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete -vv
+sudo shutdown -h now
+cat playbooks/main_test.yml 
+cat roles/vmware/run.yml 
+cat roles/vmware/tasks/main.yml 
+ping 192.168.1.50
+cat roles/vmware/tasks/main.yml 
+cat roles/vmware/run.yml 
+ansible --version
 sudo su -

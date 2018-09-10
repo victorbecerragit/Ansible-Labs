@@ -9,6 +9,7 @@
     datacenter: dev-lab
     datastore: datastore1
     network: "VMnetwork"
+    vm_template_centos: "centos-mini-full"
   tasks:
     - name: create vms from template using vmware_guest
       vmware_guest:
@@ -18,7 +19,8 @@
         validate_certs: False
         esxi_hostname: esxi.testlab.org
         datacenter: "{{ datacenter }}"
-        template: centos7-mini-gold-full
+        #template: centos7-mini-gold-full
+        template: "{{ vm_template_centos }}"
         folder: "{{ datacenter }}/vm"
         name: "{{ target }}"
         state: present
