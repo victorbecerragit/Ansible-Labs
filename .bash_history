@@ -1,344 +1,3 @@
-vi roles/apache/meta/main.yml 
-rm -rf roles/apache/meta/
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-cd roles/apache/
-ls
-ls -lrt
-cd vars/
-ls
-cat main.yml 
-cd ..
-cd defaults/
-vi main.yml 
-cd ~
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-vi roles/apache/defaults/main.yml 
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-vi roles/apache/defaults/main.yml 
-ansible-playbook -i dev-hosts roles/apache/defaults/main.yml -vvv
-rm -rf roles/
-ls -lrt
-clear
-ansible-config dump --only-changed
-ansible -i dev-hosts -m debug -a 'msg="Host is {{ ansible_host }} as {{ inventory_hostname }} defined {{ \"locally\" if inventory_file is not defined else (\"in \" + inventory_file) }}"\' 
-ansible -i dev-hosts -m debug -a 'msg="Host is {{ ansible_host }} as {{ inventory_hostname }} defined {{ \"locally\" if inventory_file is not defined else (\"in \" + inventory_file) }}"\' web
-ansible -i dev-hosts -m debug -a 'msg="Host is {{ ansible_host }} as {{ inventory_hostname }} defined {{ \"locally\" if inventory_file is not defined else (\"in \" + inventory_file) }}"\' test
-ansible-galaxy install secfigo.terraform
-pwd
-ls -lrt
-cd roles/
-ls
-ls -rlt
-cd secfigo.terraform/
-ls
-ls -lrt
-more defaults/main.yml 
-more tasks/main.yml 
-cd ..
-ansible-playbook -i dev-hosts roles/secfigo.terraform/defaults/main.yml web -vvv
-ansible-playbook -i dev-hosts roles/secfigo.terraform/defaults/main.yml -vv
-ansible-playbook -i dev-hosts roles/secfigo.terraform/meta/main.yml -vvv
-cd roles/secfigo.terraform/
-cd defaults/
-cat main.yml 
-cd ..
-cd defaults/
-vi main.yml 
-cd ../..
-cd ..
-pwd
-ansible-playbook -i dev-hosts roles/secfigo.terraform/meta/main.yml -vvv
-ansible-playbook  roles/secfigo.terraform/meta/main.yml -vvv
-vi roles/secfigo.terraform/meta/main.yml 
-ansible-doc dependencies
-pwd
-cd roles/
-ls
-cd secfigo.terraform/
-ls
-cd ..
-ansible-galaxy install -r requirements.yml -p roles/
-vi roles/secfigo.terraform/meta/main.yml 
-ansible-playbook -i dev-hosts roles/secfigo.terraform/meta/main.yml -vvv
-co roles/secfigo.terraform/meta/.galaxy_install_info 
-rm roles/secfigo.terraform/meta/main.yml 
-ansible-playbook -i dev-hosts roles/secfigo.terraform/meta/main.yml -vvv
-vi roles/secfigo.terraform/defaults/main.yml 
-vi roles/secfigo.terraform/tasks/main.yml 
-vi roles/secfigo.terraform/tests/test.yml 
-rm -rf roles/*
-ansible-galaxy --version
-clear
-mkdir -p roles/nginx
-cd roles/nginx/
-mkdir files handlers meta templates tasks vars
-ls -lrt
-cd meta/
-vi main.yml
-clear
-cd ..
-cd files/
-ls -lrt
-wget https://github.com/h5bp/server-configs-nginx/archive/master.zip
-ls -lrt
-clear
-sudo unzip
-sudo yum install unzip
-clear
-ls -lrt
-unzip master.zip 
-ls -lrt
-rm master.zip 
-clear
-ls -lrt
-mv server-configs-nginx-master/h5bp/ ../
-ls -lrt
-cd server-configs-nginx-master/
-ls
-ls -lrt
-cd ..
-pwd
-ls -lart
-clear
-pwd
-ls -lrt
-cd ..
-ls -lrt
-cd files/
-rm -rf server-configs-nginx-master/*
-ls -lrt
-rm -rf server-configs-nginx-master
-ls -lrt
-wget https://github.com/h5bp/server-configs-nginx/archive/master.zip
-unzip master.zip 
-ls -rlt
-cd server-configs-nginx-master/
-ls -lrt
-ls -lrt h5bp/
-mv h5bp/ ../
-cd ..
-ls -lrt
-rm master.zip 
-rm server-configs-nginx-master/
-rm -rf server-configs-nginx-master/
-ls -lrt
-cd h5bp/
-pwd
-cd ..
-ls -lrt
-clear
-cd ..
-cd vars/
-vi main.yml
-cd ..
-cd templates/
-vi serverforhackers.com.j2
-cd ..
-cd handlers/
-vi main.yml
-rm main.yml 
-cat ../templates/serverforhackers.com.j2 
-clear
-vi main.yml
-cd ..
-cd tasks/
-vi main.yml
-cd ..
-pwd
-vi run.yml
-cd ..
-ansible-playbook roles/nginx/run.yml -vv
-clear
-ansible-playbook --syntax-check roles/nginx/run.yml -vv
-ansible-playbook --syntax-check roles/nginx/run.yml
-cd roles/nginx/
-cd vars/
-ls
-cat main.yml 
-vi main.yml 
-cd ~
-ansible-playbook --syntax-check roles/nginx/run.yml
-tree roles/nginx/
-cd roles/nginx/files/
-ls -lrt
-rm -rf h5bp/
-rm -rf h5bp
-cd ..
-cd ~
-ansible-playbook --syntax-check roles/nginx/run.yml
-rm -rf roles/
-pwd
-ls -lrt
-cd templates/
-ls
-cd ..
-cd playbooks/
-ls
-cd ..
-ansible-galaxy install secfigo.terraform
-cd roles/
-ls
-cd secfigo.terraform/
-ls -rlt
-cd defaults/
-ls
-ls -lrt
-cat main.yml 
-cd ..
-ls -lrt
-cat tasks/main.yml 
-pwd
-cd ..
-mv secfigo.terraform terraform
-pwd
-ls -lrt
-tree terraform/
-cd terraform/
-cat meta/main.yml 
-cat tasks/main.yml 
-cat defaults/main.yml 
-cat tests/test.yml 
-cp tests/test.yml run.yml
-vi run.yml 
-cd ..
-pwd
-ansible-playbook --syntax-check roles/terraform/run.yml 
-vi roles/terraform/run.yml 
-ansible-playbook --syntax-check roles/terraform/run.yml 
-ansible-playbook --syntax-check roles/terraform/run.yml -vvv
-ansible-playbook  roles/terraform/run.yml -vvv
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv
-pwd
-cat ansible.cfg 
-ansible -i dev-hosts web -a 'cat /etc/password'
-ansible -i dev-hosts web -a 'cat /etc/passwd'
-vi roles/terraform/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv
-vi roles/terraform/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv
-ansible-playbook --syntax-check roles/terraform/run.yml 
-vi roles/terraform/run.yml 
-ansible-playbook --syntax-check roles/terraform/run.yml 
-vi roles/terraform/tasks/main.yml 
-ansible-playbook --syntax-check roles/terraform/run.yml 
-vi roles/terraform/run.yml 
-ansible-playbook --syntax-check roles/terraform/run.yml 
-cat playbooks/vc_get_guest_facts.yml 
-cat playbooks/vc_demo_vmware.yml 
-cat ansible.cfg 
-ansible -i dev-hosts web -a shell 'sudo yum install unzip'
-ansible -i dev-hosts web -a shell 'sh -c 'sudo yum install unzip''
-ansible -i dev-hosts web -a  'sh -c 'sudo yum install unzip''
-ansible -i dev-hosts web -m shell  'sh -c 'sudo yum install unzip''
-ansible -i dev-hosts web -m shell  'sudo yum install unzip'
-ansible -i dev-hosts  -a   'sudo yum install unzip'
-ansible -i dev-hosts  -a   'sudo yum install unzip' web
-ansible -i dev-hosts  -a   'sudo yum install unzip' web -vvv
-cat /etc/yum.conf 
-cd /etc/yum.repos.d/
-ls -lrt
-cat CentOS-Base.repo 
-yum repolist
-tar /var/tmp/epel.tar .
-tar -cvf /var/tmp/epel.tar . 
-scp /var/tmp/epel.tar sysadmin@192.168.1.11:/tmp
-cd ~
-ansible -i dev-hosts  -a   'sudo yum install unzip' web -vvv
-ansible-playbook --syntax-check roles/terraform/run.yml 
-ansible-playbook  roles/terraform/run.yml 
-vi roles/terraform/run.yml 
-vi roles/terraform/tasks/main.yml 
-ansible-playbook  roles/terraform/run.yml 
-ansible-playbook  roles/terraform/run.yml -vvv
-vi roles/terraform/tasks/main.yml 
-vi roles/terraform/run.yml 
-ansible-playbook  roles/terraform/run.yml -vvv
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv -b
-vi roles/terraform/run.yml 
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv 
-vi roles/terraform/run.yml 
-clear
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv 
-cat ansible.cfg 
-vi ansible.cfg 
-vi roles/terraform/run.yml 
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv 
-cat ansible.cfg 
-vi roles/terraform/tasks/main.yml 
-vi roles/terraform/meta/main.yml 
-vi roles/terraform/defaults/main.yml 
-ansible-playbook -i dev-hosts roles/terraform/run.yml -vvv 
-pwd
-cd playbooks/
-ls -lrt
-more play_vars.yml 
-cd ..
-ansible-playbook playbooks/play_vars.yml 
-rm playbooks/play_vars.yml
-cat playbooks/vars/all.yml 
-ansible-playbook playbooks/example.yml 
-vi playbooks/example.yml 
-ansible-playbook playbooks/example.yml 
-ansible-playbook playbooks/example.yml -b
-rm playbooks/example.*
-rm playbooks/*.r*
-cd playbooks/
-ls -lrt
-cat main.yml 
-cat setup_custom.yml 
-cd ..
-cd templates/network/
-vi network.j2 
-ls -lrt
-vi ifcfg-eth0.j2 
-cat network.j2
-vi ifcfg-eth0.j2 
-shutdown -h now
-cd playbooks/
-cat vc_create_guest_vmware.yml 
-cd ..
-cat roles/terraform/run.yml 
-pwd
-ls -lrt
-cd scripts/
-ls -lrt
-cp deploy-vm.csv ../roles/vmware/
-cp * ../roles/vmware/
-cat vm_deploy.sh
-./vm_deploy.sh 
-./vm_clear.sh 
-vi vm_clear.sh 
-ls -lrt
-./vm_clear.sh
-cd ~
-cat roles/vmware/tasks/main.yml 
-cd roles/vmware/files/
-ls -lrt
-vi vm_clear.sh
-rm vm_clear.sh
-cp vm_deploy.sh vm_clear.sh
-vi vm_clear.sh
-cd ..
-cd playbooks/
-ls -lrt
-cd ..
-cd files/
-ls -lrt
-mv vc_remove_guest.yml ../playbooks/vc_remove_guest_vmware_full.yml
-ls -lrt
-cd ../playbooks/
-ls -lrt
-cat vc_remove_guest_vmware_full.yml
-cat vc_create_guest_vmware_full.yml
-vi vc_remove_guest_vmware_full.yml 
-cd ..
-ansible-playbook --syntax-check roles/vmware/run.yml 
-ansible-playbook --list-tags roles/vmware/run.yml 
-ansible-playbook roles/vmware/run.yml --tags "full-delete" -v
-cat roles/vmware/defaults/main.yml 
-vi roles/vmware/playbooks/vc_remove_guest_vmware_full.yml 
-ansible-playbook roles/vmware/run.yml --tags "full-delete" -v
 cat roles/vmware/run.yml 
 cat roles/vmware/tasks/main.yml 
 vi roles/vmware/tasks/main.yml
@@ -997,4 +656,345 @@ ping 192.168.1.50
 cat roles/vmware/tasks/main.yml 
 cat roles/vmware/run.yml 
 ansible --version
+sudo su -
+cd roles/vmware/
+ls -lrt
+cd tasks/
+cat main.yml 
+cd ~
+ansible-playbook --syntax-check roles/vmware/tasks/main.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+cp roles/vmware/tasks/main.yml ~/playbooks/vmware_task_main.yml
+vi roles/vmware/tasks/main.yml 
+cat roles/vmware/files/vm_deploy.sh 
+cat /home/sysadmin/roles/vmware/playbooks/vc_create_guest_vmware_full.yml 
+vi /home/sysadmin/roles/vmware/playbooks/vc_create_guest_vmware_full.yml 
+cat roles/vmware/defaults/main.yml 
+cat /home/sysadmin/roles/vmware/playbooks/vc_create_guest_vmware_full.yml
+vi /home/sysadmin/roles/vmware/playbooks/vc_create_guest_vmware_full.yml
+cat roles/vmware/tasks/main.yml 
+cat roles/vmware/run.yml 
+cat dev-hosts 
+cd .ansible
+ls -lrt
+cd fact_cache/
+ls -lrt
+date
+cat localhost 
+cd ..
+ls -lrt
+cd tmp/
+ls -lrt
+cd ansible-local-10158mr4A0g
+ls -lrt
+cd ansiballz_cache/
+ls
+ls -lrt
+cat vmware_guest-ZIP_DEFLATED
+ 
+ls -lrt
+ls -rlt
+cd ..
+ls -lrt
+cd ..
+ls -lrt
+cd ansible-tmp-1536602326.51-214695203305688
+ls -lrt
+cat vmware_guest.py 
+cd ~
+cat roles/common/run.yml 
+ping vm-01
+nslookup ns1
+nslookup ansible
+cat /etc/resolv.conf
+cat /etc/hosts
+nslookup ansible
+cat /etc/sysconfig/network
+systemctl status NetworkManager
+ifconfig -a
+sudo su -
+pwd
+ls -lrt
+cat ansible.cfg 
+rm "1"
+cat inventory 
+ansible --version
+clear
+ansible-playbook --check --list-tasks -i roles/*/taks/*.yml
+ansible-playbook --check --list-tasks -i roles/vmware/taks/*.yml
+ansible-playbook --check --list-task -i roles/vmware/taks/*.yml
+ansible-playbook --syntax-check --list-task -i roles/vmware/taks/*.yml
+ansible-playbook --syntax-check  -i roles/vmware/taks/*.yml
+ansible --list-tasks
+ansible-playbook --list-tasks
+ansible-playbook --list-tasks roles/*
+ansible-playbook --list-tasks roles/vmware/run.yml 
+ansible-playbook --list-tasks roles/vmware/*.yml 
+ansible-playbook --list-tasks roles/*/*.yml 
+clear
+ansible-playbook --list-tasks roles/*/*.yml --check
+ansible-playbook --list-tasks roles/*/*.y
+ansible-playbook --list-tasks roles/*/*.y --syntax-check
+ansible-playbook --list-tasks roles/*/*.yml --syntax-check
+ansible-playbook --list-tasks roles/*/tasks/*.yml --syntax-check
+vi roles/common/tasks/main.yml 
+vi roles/vmware/defaults/main.yml 
+clear
+vi roles/vmware/defaults/main.yml 
+ls -lrt
+rm "1"
+ansible-playbook --list-tags roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+vi roles/vmware/tasks/main.yml 
+vi roles/vmware/defaults/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" -v
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" 
+cat roles/vmware/run.yml 
+cat roles/vmware/tasks/main.yml 
+vi playbooks/facts_refresh.yml
+vi ansible.cfg 
+vi ansible_facts_refresh.sh
+cd .ansible
+ls -lrt
+cd tmp/
+ls
+cd ..
+chmod u+x ansible_facts_refresh.sh 
+./ansible_facts_refresh.sh 
+env
+cat ansible_facts_refresh.sh 
+echo $ANSIBLE_CACHE_PLUGIN_TIMEOUT
+export ANSIBLE_CACHE_PLUGIN="jsonfile"
+echo $ANSIBLE_CACHE_PLUGIN
+export ANSIBLE_CACHE_PLUGIN_CONNECTION="~/.ansible/fact_cache"
+export ANSIBLE_CACHE_PLUGIN_TIMEOUT=7200 ; # two hours
+echo $ANSIBLE_CACHE_PLUGIN_TIMEOUT
+ansible-playbook playbooks/facts_refresh.yml 
+ansible-playbook playbooks/facts_refresh.yml -vvv
+ansible-playbook -i dev-hosts playbooks/facts_refresh.yml -vvv
+cd .ansible
+ls -lrt
+cd fact_cache/
+ls -lrt
+cat 192.168.1.51
+cd ~
+ls -lrt .ansible/fact_cache/
+date
+ansible-playbook -i dev-hosts playbooks/facts_refresh.yml --flush-cache -vvv
+date
+ls -lrt .ansible/fact_cache/
+date
+ansible-playbook -i dev-hosts playbooks/facts_refresh.yml --flush-cache -vvv
+ls -lrt .ansible/fact_cache/
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" -v
+ls -lrt .ansible/fact_cache/
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" --flush-cache -vv
+cat roles/vmware/run.yml 
+cat roles/common/run.yml 
+cat roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+history |grep syntax-check
+ansible-playbook --list-tasks roles/vmware/tasks/*.yml
+ansible-playbook --list-tasks roles/vmware/playbooks/*.yml
+cat roles/vmware/playbooks/vc_create_guest_vmware_full.yml
+cat roles/vmware/files/vm_clear.sh 
+cat roles/vmware/files/vm_deploy.sh 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
+vi roles/common/tasks/main.yml 
+cat ansible.cfg 
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit vms
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit "vms"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit "[vms]"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit [vms]
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit vm-*
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit=vms
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit="vms"
+cat dev-hosts 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit="vm-*"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" -e host_nodes=vms
+clear
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" --limit vms
+ansible-playbook -i dev-hosts --tags "full-delete" --limit vms roles/vmware/run.yml [D
+ansible-playbook -i dev-hosts --tags "full-delete" --limit vms roles/vmware/run.yml
+ansible-playbook --?
+ansible-playbook --help
+ansible-playbook -i dev-hosts --list-hosts 
+ansible-playbook -i dev-hosts --list-hosts roles/vmware/run.yml 
+cat roles/vmware/run.yml
+vi ansible.cfg 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" -vv
+vi roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml -vvv
+vi roles/common/run.yml 
+cat roles/vmware/run.yml 
+cat roles/common/run.yml 
+vi roles/common/run.yml 
+ansible-playbook --syntax-check roles/vmware/run.yml 
+ansible-playbook --syntax-check roles/common/run.yml 
+ansible-playbook --list-tags roles/common/run.yml 
+vi roles/common/tasks/main.yml 
+ansible-playbook --list-tags roles/common/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" "common" -vvv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-deploy,common -vvv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy,common" -vvv -b
+cat roles/vmware/run.yml 
+cat roles/vmware/tasks/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy, common" -vvv -b
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy,common" -vvv -b
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy,common' -vvv -b
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "common" -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "common" -vv -b
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vv 
+vi roles/common/run.yml 
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vv --limit=vms
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vv --limit=192.168*
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vvv --limit=192.168*
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vvv --limit='192.168*'
+cat ansible.cfg 
+cat inventory 
+cat dev-hosts 
+vi inventory 
+ansible-playbook -b -i dev-hosts roles/vmware/run.yml --tags "common" -vvv --limit=vms
+cat roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags='full-deploy' -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-delete
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags="full-delete"
+history |grep full
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete"
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-delete'
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-delete'
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-delete'
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-delete'
+vi roles/vmware/run.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-delete'
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' -b -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit  -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit vms -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit "vms" -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit "vm-01" -vv
+ansible-playbook --help
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit=vm-* -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit='vm-*' -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.5*' -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.50' -vv
+ansible-playbook - roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.50' -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.50' -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit='vms' -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit=vms -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit="vms" -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit="vm-" -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit="vm-*" -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common' --limit='vm-*' -vv
+ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common'  -vv
+ansible-playbook roles/common/run.yml -l vms -vv
+vi roles/common/run.yml 
+cat dev-hosts 
+ansible-playbook -i dev-hosts roles/common/run.yml -l vms -vv
+cat dev-hosts 
+ansible-playbook -i dev-hosts roles/common/run.yml -l vms -vv
+pwd
+git status
+git add -A
+git status
+git commit -m "Updated playboos, roles"
+history |grep git
+git branch
+git pust -u origin master
+git push -u origin master
+git config
+git -l
+git config -l
+cat templates/network/ifcfg-eth0.j2 
+vi templates/network/ifcfg-eth0.j2 
+pwd
+cat templates/network/ifcfg-eth0.j2 
+pwd
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-delete -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-deply -vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-deploy-vv
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-deploy -v
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags common -l vms -v
+ansible-playbook  roles/vmware/run.yml --tags common -l vms -v
+ansible-playbook -i dev-hosts roles/common/run.yml --tags common -l vms -v
+vi roles/common/tasks/main.yml 
+cd templates/network/
+ls -lrt
+cp network.j2 resolv.conf.j2
+vi resolv.conf.j2 
+cat sysctl.conf.j2 
+cat network.j2 
+ls -lrt
+cat sysctl.conf.j2 
+ls -lrt
+cd ..
+ls -lrt
+cd ..
+cd group_vars/
+cat all.yml 
+cd ..
+pwd
+vi roles/common/tasks/main.yml 
+vi group_vars/all.yml 
+vi roles/common/tasks/main.yml 
+vi roles/common/defaults/main.yml 
+ls -lrt /home/sysadmin/templates/network/resolv.conf.j2
+pwd
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags full-delete 
+sudo su -
+sudo su -
+pwd
+sudo su -
+pwd
+cat /usr/local/docker/auto-complete.txt 
+curl https://github.com/dysosmus/ansible-completion/blob/master/ansible-completion.bash -o /etc/bash_completion.d/ansible-completion.bash
+ls -lrt /etc/bash_completion.d/
+sudo curl https://github.com/dysosmus/ansible-completion/blob/master/ansible-completion.bash -o /etc/bash_completion.d/ansible-completion.bash
+ls -lrt /etc/bash_completion.d/
+cat /etc/bash_completion.d/ansible-completion.bash
+cat /etc/bash_completion.d/ansible-completion.bash | more
+sudo wget https://github.com/dysosmus/ansible-completion/blob/master/ansible-completion.bash -o /etc/bash_completion.d/ansible-completion.bash
+cat /etc/bash_completion.d/ansible-completion.bash | more
+wget https://github.com/dysosmus/ansible-completion/blob/master/ansible-completion.bash
+ls -lrt
+cat ansible-completion.bash.1
+ls -lrt
+rm ansible-completion.bash.1 
+cat ansible-completion.bash |more
+rm ansible-completion.bash 
+pwd
+git clone https://github.com/dysosmus/ansible-completion.git
+ls -lrt
+cd ansible-completion/
+ls -lrt
+cat ansible-completion.bash
+cd ..
+vi ansible-completion.README
+cp ansible-completion/ansible-completion.bash /etc/bash_completion.d/
+sudo cp ansible-completion/ansible-completion.bash /etc/bash_completion.d/
+ls -lrt /etc/bash_completion.d/
+echo $SHELL
+exec $SHELL -l
+sudo cp ansible-completion/ansible-playbook-completion.bash /etc/bash_completion.d/
+exec $SHELL -l
+ansible-playbook --list-tags
+ansible-playbook --list-tags playbooks/*
+ansible-playbook --list-tags playbooks/*.yml
+pwd
+cat /etc/profile
+ls -lrt /usr/local/etc/
+sudo su -
+sudo su -
 sudo su -
