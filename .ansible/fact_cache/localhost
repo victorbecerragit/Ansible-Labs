@@ -21,16 +21,16 @@
     "ansible_date_time": {
         "date": "2018-09-10", 
         "day": "10", 
-        "epoch": "1536602324", 
-        "hour": "19", 
-        "iso8601": "2018-09-10T17:58:44Z", 
-        "iso8601_basic": "20180910T195844867224", 
-        "iso8601_basic_short": "20180910T195844", 
-        "iso8601_micro": "2018-09-10T17:58:44.867310Z", 
-        "minute": "58", 
+        "epoch": "1536608997", 
+        "hour": "21", 
+        "iso8601": "2018-09-10T19:49:57Z", 
+        "iso8601_basic": "20180910T214957265627", 
+        "iso8601_basic_short": "20180910T214957", 
+        "iso8601_micro": "2018-09-10T19:49:57.265718Z", 
+        "minute": "49", 
         "month": "09", 
-        "second": "44", 
-        "time": "19:58:44", 
+        "second": "57", 
+        "time": "21:49:57", 
         "tz": "CEST", 
         "tz_offset": "+0200", 
         "weekday": "Monday", 
@@ -266,6 +266,9 @@
         "nameservers": [
             "192.168.1.10", 
             "8.8.8.8"
+        ], 
+        "search": [
+            "testlab.org"
         ]
     }, 
     "ansible_domain": "testlab.org", 
@@ -459,39 +462,39 @@
     "ansible_lsb": {}, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "e04c22721c474027916297e7b7b7f651", 
-    "ansible_memfree_mb": 6, 
+    "ansible_memfree_mb": 9, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 24, 
-            "used": 463
+            "free": 28, 
+            "used": 459
         }, 
         "real": {
-            "free": 6, 
+            "free": 9, 
             "total": 487, 
-            "used": 481
+            "used": 478
         }, 
         "swap": {
-            "cached": 1, 
-            "free": 756, 
+            "cached": 0, 
+            "free": 762, 
             "total": 819, 
-            "used": 63
+            "used": 57
         }
     }, 
     "ansible_memtotal_mb": 487, 
     "ansible_mounts": [
         {
-            "block_available": 1147765, 
+            "block_available": 1147532, 
             "block_size": 4096, 
             "block_total": 1621504, 
-            "block_used": 473739, 
+            "block_used": 473972, 
             "device": "/dev/mapper/centos-root", 
             "fstype": "xfs", 
-            "inode_available": 3186672, 
+            "inode_available": 3186610, 
             "inode_total": 3248128, 
-            "inode_used": 61456, 
+            "inode_used": 61518, 
             "mount": "/", 
             "options": "rw,seclabel,relatime,attr2,inode64,noquota", 
-            "size_available": 4701245440, 
+            "size_available": 4700291072, 
             "size_total": 6641680384, 
             "uuid": "27cefc5f-ca1b-4e94-b905-6700cba510ba"
         }, 
@@ -562,7 +565,7 @@
     "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD5nyjzw5gtGUEwQm3+H2Dkry6EhBbBp2xfAnUIRDTxcgc3yZi4tvTqF2QnxsXTNtH4gqxi5sHSh0eWeH16hR3Q=", 
     "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAICAa64V7gOuH4u0P+3tS/A2ELQNHGopSHEcX6ilX5QoI", 
     "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQChxgN+lzRbzy7/4jrpDN34GCKv6zvtoC6/sg4rwPbQe67NZUdcNmDToIrM1w3yXSrDHHpC5Lb+aDkryDa/Ui+zkZ/kLOuhHFgC3USjxl8emHGum/9tNJGUyM4gko1ov+rL9T8hO2AgISF2GfYyIytC+SREG8TxvOyXSYNgvA4ZAFIjvyc1wOO8ei2MIO/9J3/2nxc6RvTibpScjX+urByI8wwtopoByZKrweUkPEGEeTDp3b7UMFMwyy3p8YcZPR0USRSKIEW1W+/591UXwnuy2flVeusTQVGO3SBKQdr/p7KM5rhyNafn65yst+p33Ecrq+y7EZeulP2+fohSa7CZ", 
-    "ansible_swapfree_mb": 756, 
+    "ansible_swapfree_mb": 762, 
     "ansible_swaptotal_mb": 819, 
     "ansible_system": "Linux", 
     "ansible_system_capabilities": [
@@ -570,7 +573,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "innotek GmbH", 
-    "ansible_uptime_seconds": 14146, 
+    "ansible_uptime_seconds": 20818, 
     "ansible_user_dir": "/home/sysadmin", 
     "ansible_user_gecos": "sysadmin", 
     "ansible_user_gid": 1000, 

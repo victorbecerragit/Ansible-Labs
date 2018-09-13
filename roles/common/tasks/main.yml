@@ -27,12 +27,6 @@
    with_items:
      - { pname: 'net.ipv6.conf.all.disable_ipv6', value: '1' }
      - { pname: 'net.ipv6.conf.default.disable_ipv6', value: '1' }
- - name: Update /etc/sysconfig/network file on target
-   become: true
-   template:
-     src: "{{ net_template }}"
-     dest: /etc/sysconfig/network
-     backup: yes
  - name: Update /etc/hosts file
    become: true
    lineinfile:
@@ -58,6 +52,18 @@
  - name: Disable NetworkManager service
    become: true
    service: name=NetworkManager state=stopped enabled=no
+ - name: Update /etc/sysconfig/network file on target
+   become: true
+   template:
+     src: "{{ net_template }}"
+     dest: /etc/sysconfig/network
+     backup: yes
+ - name: Update /etc/resolv.conf file on target
+   become: true
+   template:
+     src: "{{ dns_template }}"
+     dest: /etc/resolv.conf
+     backup: yes
  - name: copy current image kernel
    shell:
      'sudo cp /boot/initramfs-`uname -r`.img /boot/initramfs-`uname -r`.img.backup'
