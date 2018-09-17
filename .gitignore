@@ -1,4 +1,5 @@
 .gitignore
+.gitconfig
 .ssh/
 .ansible/
 .bash_history
