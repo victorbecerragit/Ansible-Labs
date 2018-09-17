@@ -13,6 +13,9 @@ localhost ansible_connection=local
 centos-vm-mini
 192.168.1.11
 
+[openstack]
+openstack
+
 [web]
 192.168.1.11
 
