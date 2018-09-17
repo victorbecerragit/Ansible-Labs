@@ -19,6 +19,8 @@
           state: present
           regexp: '^%sysadmin\s'
           line: '%sysadmin ALL=(ALL) NOPASSWD: ALL'
+      #Option 2
+      #echo "sysadmin ALL=(ALL) NOPASSWD: ALL"| sudo tee /etc/sudoers.d/sysadmin
     - name: Update network file with remote hostname
       #copy:
       template:
