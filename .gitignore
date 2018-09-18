@@ -3,3 +3,4 @@
 .ssh/
 .ansible/
 .bash_history
+.ansible_async/
