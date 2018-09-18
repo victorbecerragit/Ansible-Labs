@@ -17,8 +17,8 @@
         validate_certs: no
         guest: "{{ target }}"
         state: powered_off
-      delegate_to: localhost
-
+      #delegate_to: localhost
+      run_once: true
     - name: delete vms
       vsphere_guest:
         vcenter_hostname: "{{ vc_hostname }}"
@@ -28,4 +28,5 @@
         guest: "{{ target }}"
         state: absent
         force: yes
-      delegate_to: localhost
+      #delegate_to: localhost
+      run_once: true

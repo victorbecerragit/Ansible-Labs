@@ -1,12 +1,15 @@
 ---
+#- hosts: vms, openstack
 - hosts: localhost
   connection: local
-  
-  roles:
+  become: true 
+  gather_facts: false
+  #roles:
   tasks:
     - include_role:
         name: vmware 
-      tags: 
+      tags:
+        - manual-deploy 
         - full-deploy
         - full-delete
     - include_role: 

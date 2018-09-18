@@ -1,4 +1,6 @@
-- hosts: vms
+- hosts: vms, openstack
   become: true
+  gather_facts: True
+  gather_subset: network
   roles:
    - { role: common, tags: [ common ] }

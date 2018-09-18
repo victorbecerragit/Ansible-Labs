@@ -1,5 +1,5 @@
 ---
-- name: create vms from template using vmware_guest
+- name: Manual vms deploy from template using vmware_guest
   vmware_guest:
     hostname: "{{ vc_hostname }}"
     username: "{{ username }}"
@@ -8,8 +8,14 @@
     #template: centos7-mini-gold-full
     template: centos-mini-full
     folder: "{{ datacenter }}/vm"
-    name: vm-01
+    name: "{{ target }}"
     state: poweredon
+    networks:
+    - name: VM Network
+      ip: "{{ IP }}"
+      netmask: 255.255.255.0
+      gateway: 192.168.1.1
+      domain: testlab.org
     hardware:
       memory_mb: 512
       num_cpus: 1
