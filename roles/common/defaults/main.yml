@@ -1,8 +1,11 @@
 ---
+if_template: /home/sysadmin/templates/network/ifcfg-ens192.j2
 net_template: /home/sysadmin/templates/network/network.j2
 dns_template: /home/sysadmin/templates/network/resolv.conf.j2
 sysctl_template: /home/sysadmin/templates/network/sysctl.conf.j2
+delta_pkg: "deltarpm"
 perl_pkg: "perl"
 bindu_pkg: "bind-utils"
 net_pkg: "net-tools"
+git_pkg: "git"
 

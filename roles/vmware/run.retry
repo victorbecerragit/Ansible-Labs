@@ -1,7 +1,1 @@
-openstack
-vm-01.testlab.org
-vm-02
-vm-02.testlab.org
-vm-03
-vm-04
-vm-05
+localhost

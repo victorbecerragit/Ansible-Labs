@@ -1,9 +1,4 @@
 192.168.1.11
-ansible_ssh_common_args=-o StrictHostKeyChecking=no
 centos-vm-mini
+openstack
 vcsa.testlab.org
-vm-01
-vm-02
-vm-03
-vm-04
-vm-05

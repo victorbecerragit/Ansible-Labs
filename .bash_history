@@ -1,438 +1,3 @@
-ansible-playbook roles/vmware/run.yml --tags "full-deploy" -vv
-vi roles/vmware/playbooks/vc_create_guest_vmware_full.yml 
-ansible-playbook roles/vmware/run.yml --tags "full-deploy" -vv
-pwd
-cd roles/
-ls -lrt
-mkdir common
-cd common/
-mkdir defaults vars files meta tasks
-tree .
-tree ../terraform/
-cd tasks
-vi main.yml
-pwd
-cat main.yml 
-vi ../defaults/main.yml
-vi main.yml 
-cd ..
-ls -lrt
-cat ../vmware/run.yml 
-cat ../terraform/run.yml 
-vi run.yml
-vi tasks/main.yml 
-cd ..
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-ansible-playbook roles/common/run.yml -vvv
-ansible-playbook roles/common/run.yml -vvv web
-ansible-playbook -i dev-hosts roles/common/run.yml -vvv 
-sudo ls -lrt /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
-cat /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
-ls -lrt /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
-ansible-playbook -i dev-hosts roles/common/run.yml -vvv 
-vi roles/common/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -vvv 
-vi roles/common/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -vvv 
-vi roles/common/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -v
-vi roles/common/tasks/main.yml 
-vi roles/common/defaults/main.yml 
-pwd
-vi templates/network/network.j2 
-ansible-playbook -i dev-hosts roles/common/run.yml -v
-pwd
-ls -lrt
-mkdir files
-mv deploy-vm.csv files/
-ls -lrt
-cat extra-vars.yml
-rm extra-vars.yml
-ls -lrt
-cd scripts/
-ls
-more vm_deploy.sh 
-vi vm_deploy.sh 
-vi vm_clear.sh 
-ls -lrt
-cd ..
-ls -lrt
-cd files/
-ls
-cd ..
-cd roles/
-ls
-ls -lrt
-cd ..
-pwd
-tar -cfv /var/tmp/ansible_home.tar .
-tar -cfv /var/tmp/ansible_home.tar /home/sysadmin/*
-sudo tar -cfv /var/tmp/ansible_home.tar /home/sysadmin/*
-cd /
-sudo tar -cfv /var/tmp/ansible_home.tar /home/sysadmin/*
-sudo tar -cvf /tmp/ansible_home.tar /home/sysadmin/*
-ls -lrt tmp/ansible_home.tar 
-ls -lrth tmp/ansible_home.tar 
-pwd
-cd ~
-ansible-playbook --list-tags roles/vmware/run.yml 
-ansible-playbook roles/vmware/run.yml --tags "full-delete" -v
-shutdown -h now
-sudo su -
-man firewalld
-man firewall-cmd
-sudo firewall-cmd -V
-man firewall-cmd
-sudo su -
-pwd
-cd roles/common/
-cd tasks/
-vi main.yml 
-pwd
-cd ../..
-cd ..
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-vi roles/common/defaults/main.yml 
-vi roles/common/tasks/main.yml 
-cat roles/common/defaults/main.yml 
-cd templates/network/
-sl -lrt
-ls -lrt
-vi sysctl.conf.j2
-cat sysctl.conf.j2
-cd ..
-vi roles/common/tasks/main.yml 
-ansible-doc shell
-ansible-doc sysctl
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-ansible-playbook roles/common/run.yml -vv
-ansible-playbook -i dev-hosts roles/common/run.yml -vv
-pwd
-mkdir roles/common/handlers
-vi roles/common/handlers/main.yml
-vi roles/common/tasks/main.yml 
-vi roles/common/handlers/main.yml
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-ansible-playbook  roles/common/run.yml -vvv
-ansible-playbook -i dev-hosts roles/common/run.yml -vvv
-ansible-playbook -i dev-hosts roles/common/run.yml -v
-cat roles/common/handlers/main.yml 
-vi roles/common/handlers/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -vv
-vi roles/common/tasks/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -vv
-vi roles/common/handlers/main.yml 
-vi roles/common/tasks/main.yml 
-vi roles/common/handlers/main.yml 
-ansible-playbook -i dev-hosts roles/common/run.yml -vv
-sudo su -
-pwd
-ls -lrt
-rm "v"
-ls -lrt
-sudo shutdown -h now
-pwd
-git status
-git --version
-sudo yum -y update git
-sudo su -
-pwd
-git init
-git status
-git branch
-pwd
-viv .gitignore
-vi .gitignore
-git status
-cat .bashrc 
-git add -A
-git status
-clear
-git commit -m "Initial Commit Ansible_lab"
-git --global user.email "vbecerraar@gmail.com"
-git config --global user.email "vbecerraar@gmail.com"
-git config --global user.name "victorbecerragit"
-git config
-git list
-git config --list
-git brach
-git branch
-git commit -m "Initial Commit Ansible_lab"
-pwd
-git status
-git remote add origin https://github.com/victorbecerragit/Ansible-Labs.git
-git config --list
-git push -u origin master
-ping google.com
-sudo shutdown -h now
-ping google.com
-sudo su -
-pwd
-git status
-git config --list
-git push -u origin master 
-git status
-git branch
-sudo su -
-pwd
-ls -lrt
-cd playbooks/
-ls
-ls -lrt
-cd vars/
-ls
-cat all.yml 
-pwd
-cd ..
-ls
-vi main_test.yml 
-cd ..
-cd roles/common/handlers/
-vi main.yml 
-pwd
-ls -lrt
-vi main.yml 
-cd ..
-cd playbooks/
-vi main_test.yml 
-cd ..
-pwd
-cd roles/common/tasks/
-vi main.yml 
-pwd
-cd ..
-ansible-playbook --syntax-check roles/common/run.yml 
-vi roles/common/tasks/main.yml 
-ansible-playbook --syntax-check roles/common/run.yml 
-pwd
-git status
-git add -A
-git status
-git commit -m 
-git commit -m "Some updates to roles/common"
-git status
-history |grep push
-pwd
-git branch
-git push -u origin master
-which shutdown
-ls -ltr /sbin/shutdown 
-sudo /sbin/shutdown -h now
-sudo su -
-pwd
-git status
-git branch
-git add -A
-git status
-pwd
-cat .gitignore 
-ls -lrt
-cd playbooks/
-ls
-ls -lrt
-cat main_test.yml 
-cat setup_custom.yml 
-vi main_test.yml 
-ls -lrt /boot/initramfs-`uname -r`.img
-vi main_test.yml 
-ansible-doc -l copy
-ansible-doc copy
-vi main_test.yml 
-ansible-playbook --syntax-check main_test.yml 
-cd ..
-ansible-playbook -i dev-hosts playbooks/main_test.yml 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml 
-cd playbooks/
-ls -lrt
-cat setup_custom.yml
-cd ..
-ls -lrt
-cd group_vars/
-ls
-vi all.yml 
-cat ../playbooks/main_test.yml 
-vi all.yml 
-cat all.yml 
-cd ..
-cd playbooks/
-vi main_test.yml 
-cd ..
-ansible-playbook -i dev-hosts playbooks/main_test.yml 
-ls -lrt /boot/initramfs-`uname -r`.img
-vi group_vars/
-vi group_vars/all.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml 
-pwd
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-cat ansible.cfg 
-ansible -i dev-hosts web -a "sh -c 'uname -a'"
-ansible -i dev-hosts web -a "sh -c 'uname -a ; sudo cp /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img.backup'"
-vi playbooks/main_test.
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-cat ansible.cfg 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-ansible-playbook --syntax-check playbooks/main_test.yml 
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-cat group_vars/all.yml 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-cat ansible.cfg 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv -b
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-history |grep cp
-ansible -i dev-hosts web -a "sh -c 'uname -a ; sudo cp /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img /boot/initramfs-3.10.0-862.11.6.el7.x86_64.img.backup'"
-vi playbooks/main_test.yml 
-ansible-doc shell
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook --syntax-check playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-cp roles/common/handlers/main.yml 
-cp roles/common/handlers/main.yml .
-mkdir handles
-mv main.yml handles/
-cd handles/
-cat main.yml 
-cd ..
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-mv handles handlers
-ls -lrt
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-cat handlers/main.yml 
-cd ..
-pwd
-cd ~
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vvv 
-pwd
-vi roles/common/tasks/main.yml 
-vi playbooks/main_test.yml 
-ansible-playbook -i dev-hosts playbooks/main_test.yml -vv
-vi roles/common/tasks/main.yml 
-vi roles/vmware/run.yml 
-cat roles/common/tasks/main.yml 
-cat playbooks/main_test.yml 
-cat dev-hosts 
-vi roles/vmware/run.yml 
-vi roles/common/run.yml 
-cat dev-hosts 
-vi dev-hosts 
-ansible-playbook --syntax-check roles/vmware/run.yml 
-ansible-playbook -i dev-hosts  roles/vmware/run.yml -vv
-vi roles/common/tasks/main.yml 
-ansible-playbook --list tags roles/vmware/run.yml 
-ansible-playbook --list-tags roles/vmware/run.yml 
-ansible-playbook -i dev-hosts roles/vmware/run.yml -tags "full-deploy"
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy"
-cat roles/vmware/run.yml 
-vi roles/vmware/run.yml 
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
-vi roles/vmware/run.yml 
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
-vi roles/vmware/run.yml 
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vv
-ansible-playbook --syntax-check roles/vmware/run.yml
-cat ansible.cfg 
-vi ansible.cfg 
-pwd
-cd roles/
-ls
-ls -lrt
-cd ..
-ansible-playbook --syntax-check roles/vmware/run.yml
-clear
-vi roles/vmware/run.yml 
-ansible-playbook --syntax-check roles/vmware/run.yml 
-vi roles/vmware/run.yml 
-ansible-playbook --syntax-check roles/vmware/run.yml 
-vi roles/vmware/run.yml 
-ansible-playbook --syntax-check roles/vmware/run.yml 
-ansible-playbook --syntax-check roles/vmware/run.yml -vv
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
-vi roles/vmware/run.yml 
 ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
 vi roles/vmware/run.yml 
 ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -vvv
@@ -998,3 +563,438 @@ cat /etc/hosts
 ps -fea |grep ansible
 ansible-playbook  -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -vv
 ansible-playbook  -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -vv
+ssh openstack
+pwd
+history |grep openstack
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -v
+vi roles/common/run.yml 
+ansible openstack -m setup -a 'gather_subset=network,virtual'
+ansible -i dev-hosts openstack -m setup -a 'gather_subset=network,virtual'
+ansible -i dev-hosts openstack -m setup -a 'gather_subset=network'
+vi roles/common/run.yml 
+ansible -i dev-hosts openstack -m setup -a 'gather_subset=!all, !min, network'
+ansible -i dev-hosts openstack -m setup -a 'gather_subset=!all,!min,network'
+vi roles/common/run.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -v
+vi /home/sysadmin/roles/common/tasks/main.yml
+cat roles/common/run.yml 
+vi roles/common/tasks/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -v
+vi roles/common/tasks/main.yml 
+cat roles/common/run.yml 
+vi roles/common/run.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -v
+more roles/common/tasks/main.yml 
+more roles/common/defaults/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -vv
+ls -lrt /etc/sysctl.conf
+cat /etc/sysctl.conf
+cat /etc/hosts
+vi  roles/common/tasks/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -vv
+ansible -i dev-hosts openstack -m setup | grep -A1 ansible_default_ipv4
+ansible -i dev-hosts openstack -m setup | grep -A1 ansible_default_ipv4 -v
+ansible -i dev-hosts openstack -m setup | grep -A1 ansible_default_ipv4 
+vi roles/common/run.yml 
+ansible -i dev-hosts openstack -m setup | grep -A1 ansible_default_ipv4 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -vv
+cd roles/common/
+ls -lrt
+cd vars/
+ls -lrt
+cd ..
+cd files
+ls -lrt
+cd ..
+cd defaults/
+ls -lrt
+cd ..
+cd tasks
+ls -lrt
+pwd
+cd ..
+pwd
+cd ..
+ls -lrt
+cd vmware/
+ls
+cd files/
+ls
+cd ..
+cd defaults/
+ls
+cd ..
+pwd
+cd ..
+ls -lrt
+rm "1"
+cd scripts/
+ls
+cd ..
+cd group_vars/
+ls
+rm "1"
+ls -lrt
+cat all.yml 
+cd ..
+cd templates/
+ls
+cd network/
+pwd
+ls -lrt
+cat network.j2 
+pwd
+cd .
+cd ..
+vi roles/common/tasks/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "common" -vv
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags 
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-doc [[local|localrc]]
+ADMIN_PASSWORD=secret
+DATABASE_PASSWORD=$ADMIN_PASSWORD
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWOR
+ansible-doc k8s
+cat roles/vmware/tasks/main.yml 
+vi roles/vmware/tasks/main.yml
+cd roles/vmware/
+cd defaults/
+cat main.yml 
+cd ..
+pwd
+cd ..
+history |grep openstack
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+vi roles/vmware/tasks/main.yml 
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+cat roles/common/tasks/main.yml 
+pwd
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+vi roles/common/run.yml
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook openstack -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack  roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack  roles/common/run.yml --tags "common" -v
+cat inventory/dev-hosts 
+ansible all -m ping
+ansible -i inventory/ all -m ping
+ansible -i inventory/ openstack -m ping
+ansible-playbook -i inventory/ openstack roles/common/run.yml 
+ansible-playbook -i dev-hosts  openstack roles/common/run.yml 
+pwd
+cat ansible.cfg 
+ansible-playbook   openstack roles/common/run.yml 
+ansible-playbook roles/common/run.yml openstack
+ansible-playbook roles/common/run.yml 
+cat roles/common/run.yml
+history |grep openstack
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -v
+cat roles/common/tasks/main.yml 
+cat roles/common/defaults/main.yml 
+ansible openstack -m shell "uname -a"
+ansible -i inventory/ openstack -m shell "uname -a"
+ansible -i inventory/ openstack -m -a "uname -a"
+ansible-doc -l shell
+ansible-doc shell
+ansible -i inventory/ openstack -m ping
+ansible -i inventory/ openstack -m "uname -a"
+ansible -i inventory/ openstack -m -a "uname -a"
+ansible -i inventory/ openstack -m command "uname -a"
+ansible-doc command
+ansible -i inventory/ openstack -m command:"uname -a"
+ansible -i inventory/ openstack -m command:'uname -a'
+clear
+ansible -i inventory/ openstack -m shell -a "uname -a"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git" -u sysadmin
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git" -u sysadmin -b
+pwd
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+clear
+vi roles/vmware/tasks/main.yml 
+cd roles/vmware/files/
+ls
+ls -lrt
+more vm_deploy.sh 
+cat ../playbooks/vc_create_guest_vmware_full.yml 
+vi ../playbooks/vc_create_guest_vmware_full.yml 
+cd !
+cd ~
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook -i inventory/ vm-01 roles/common/run.yml --tags "common" -vv
+ansible-playbook  vm-01 roles/common/run.yml --tags "common" -vv
+ansible-playbook vms roles/common/run.yml --tags "common" -vv
+cat dev-hosts 
+rm dev-hosts 
+ansible-playbook vms roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ vms roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/dev-hosts vms roles/common/run.yml --tags "common" -vv
+history |grep -playbook
+pwd
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+vi roles/common/run.yml
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook  -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook openstack -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack  roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ openstack  roles/common/run.yml --tags "common" -v
+cat inventory/dev-hosts 
+ansible all -m ping
+ansible -i inventory/ all -m ping
+ansible -i inventory/ openstack -m ping
+ansible-playbook -i inventory/ openstack roles/common/run.yml 
+ansible-playbook -i dev-hosts  openstack roles/common/run.yml 
+pwd
+cat ansible.cfg 
+ansible-playbook   openstack roles/common/run.yml 
+ansible-playbook roles/common/run.yml openstack
+ansible-playbook roles/common/run.yml 
+cat roles/common/run.yml
+history |grep openstack
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -v
+cat roles/common/tasks/main.yml 
+cat roles/common/defaults/main.yml 
+ansible openstack -m shell "uname -a"
+ansible -i inventory/ openstack -m shell "uname -a"
+ansible -i inventory/ openstack -m -a "uname -a"
+ansible-doc -l shell
+ansible-doc shell
+ansible -i inventory/ openstack -m ping
+ansible -i inventory/ openstack -m "uname -a"
+ansible -i inventory/ openstack -m -a "uname -a"
+ansible -i inventory/ openstack -m command "uname -a"
+ansible-doc command
+ansible -i inventory/ openstack -m command:"uname -a"
+ansible -i inventory/ openstack -m command:'uname -a'
+clear
+ansible -i inventory/ openstack -m shell -a "uname -a"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git"
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git" -u sysadmin
+ansible -i inventory/ openstack -m shell -a "(uname -a\n);date;yum -y install perl bind-utils net-tools git" -u sysadmin -b
+pwd
+vi roles/common/tasks/main.yml 
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+clear
+vi roles/vmware/tasks/main.yml 
+cd roles/vmware/files/
+ls
+ls -lrt
+more vm_deploy.sh 
+cat ../playbooks/vc_create_guest_vmware_full.yml 
+vi ../playbooks/vc_create_guest_vmware_full.yml 
+cd !
+cd ~
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-deploy" -v
+vi roles/common/tasks/main.yml 
+ansible-playbook -i inventory/ vm-01 roles/common/run.yml --tags "common" -vv
+ansible-playbook  vm-01 roles/common/run.yml --tags "common" -vv
+ansible-playbook vms roles/common/run.yml --tags "common" -vv
+cat dev-hosts 
+rm dev-hosts 
+ansible-playbook vms roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/ vms roles/common/run.yml --tags "common" -vv
+ansible-playbook -i inventory/dev-hosts vms roles/common/run.yml --tags "common" -vv
+history |grep -playbook
+history |grep "-playbook"
+sudo free -m
+pwd
+history |grep open
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+vi roles/vmware/tasks/main.yml 
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+grep centos7_64Guest roles/vmware/tasks/main.yml
+vi roles/vmware/tasks/main.yml
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+vi roles/vmware/tasks/main.yml
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+cat roles/vmware/run.yml
+cat roles/vmware/tasks/main.yml 
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -vv
+vi roles/vmware/tasks/main.yml 
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -vv
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible openstack -m ping
+ansible -i dev-hosts openstack -m ping
+ansible -i dev-hosts openstack -m ping -vv
+rm /home/sysadmin/.ssh/known_hosts
+ansible -i dev-hosts openstack -m ping -vv
+ssh openstack
+ansible -i dev-hosts openstack -m ping -vv
+ansible -i dev-hosts 192.168.1.* -m ping -vv
+ansible -i dev-hosts 192.168.1.106 -m ping -vv
+ansible  192.168.1.106 -m ping -vv
+ssh 192.168.1.106
+pwd
+cd .ssh/
+ls -lrt
+ssh-copy-id --?
+cat id_rsa.pub 
+ssh-copy-id -i id_rsa.pub sysadmin@192.168.1.106
+ssh 'sysadmin@192.168.1.106'
+cd ..
+pwd
+ssh 'sysadmin@192.168.1.106'
+sudo cat /etc/passwd
+df -h
+ssh 'sysadmin@192.168.1.106'
+pwd
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy" -v
+ansible-playbook -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv
+cat roles/common/run.yml
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv -b
+vi roles/common/run.yml
+cat ansible.cfg 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/common/run.yml --tags "common" -vv -b
+ansible openstack -m ping
+ansible openstack -m ping -vv
+vi ansible.cfg 
+cat dev-hosts 
+ansible openstack -m ping -vv
+ansible -i dev-hosts openstack -m ping -vv
+ansible -i dev-hosts openstack -m shell 'uname -a'
+cat roles/common/tasks/main.yml 
+ls -lrt
+rm "1"
+cd playbooks/
+ls -lrt
+cat setup_custom.yml 
+cat main_test.yml 
+vi passwordless.yml
+cd ..
+ansible-playbook -i dev-hosts openstack playbooks/passwordless.yml -vvv
+ansible-playbook  openstack playbooks/passwordless.yml -vvv
+pwd
+ansible-playbook  playbooks/passwordless.yml -vvv openstack
+ansible-playbook  playbooks/passwordless.yml -vvv 
+ansible-playbook  --syntax-check playbooks/main_test.yml 
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+vi playbooks/passwordless.yml
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+vi playbooks/passwordless.yml
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+vi playbooks/passwordless.yml
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+cat playbooks/main_test.yml 
+vi playbooks/passwordless.yml
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+cat playbooks/main_test.yml 
+vi playbooks/passwordless.yml
+ansible-playbook  --syntax-check playbooks/passwordless.yml 
+cat playbooks/main_test.yml 
+vi playbooks/passwordless.yml
+vi ansible.cfg 
+cat /etc/ansible/roles/plugins/strategy
+cat /etc/ansible/roles/
+cd /etc/ansible/roles/
+ls
+cd ..
+pwd
+cd ~
+pwd
+mkdir inventory
+cat inventory 
+rm inventory 
+mkdir inventory
+cp dev-hosts inventory/
+vi ansible.cfg 
+ansible -m list-all
+vi ansible.cfg 
+pwd
+cd playbooks/
+vi test.yml
+cd ..
+cd templates/
+ls -lrty
+ls -lrt
+vi template.j2
+cd ~
+ansible-playbook playbooks/test.yml 
+ansible-playbook playbooks/test.yml -v
+pwd
+ls -lrt
+ls -lrt /tmp/
+pwd
+vi ansible.cfg 
+cd inventory/
+ls -lrt
+cat dev-hosts 
+ping openstack
+cd ..
+ansible dev -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin
+ansible openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin
+cat inventory/dev-hosts
+ansible vms -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin
+pwd
+cat ansible.cfg 
+vi ansible.cfg
+ansible vms -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin
+ansible vms -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -i vms -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -i inventory/ vms -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -i inventory/ openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+vi ansible.cfg 
+ansible openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -i openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -i inventory/ openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+ansible -m ping all
+pwd
+ln -s inventory/dev-hosts hosts
+ls -lrt
+ansible -m ping all
+ansible -m ping all -vv
+cat hosts
+vi inventory/dev-hosts
+cat hosts
+ansible -m ping all -vv
+ansible -i inventory/ -m ping all -vv
+ansible -i inventory/ openstack  -m setup
+ansible -i inventory/ openstack -b -m yum -a "name=httpd state=present"
+pwd
+cat roles/common/tasks/main.yml 
+ansible -i inventory/ openstack -b -m yum -a "name=httpd state=present"
+clear
+pwd
+vi roles/common/tasks/main.yml 
+cat playbooks/setup_custom.yml 
+ansible -i inventory/ openstack -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u sysadmin -vv
+cat roles/common/defaults/main.yml 
+cat roles/common/run.yml 
+cat roles/common/tasks/main.yml 
+cat roles/common/defaults/main.yml 
+sudo su -
+pwd
+ansible-playbook -i dev-hosts --limit vm-* roles/vmware/run.yml --tags ""full-delete" -v
+ansible-playbook -i dev-hosts --limit vm-* roles/vmware/run.yml --tags "full-delete" -v
+ansible-playbook -i dev-hosts --limit vms roles/vmware/run.yml --tags "full-delete" -v
+ansible-playbook -i dev-hosts roles/vmware/run.yml --tags "full-delete" -v
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "full-deploy"
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy"
+ansible-doc yum
+vi ansible.cfg 
+vi roles/common/run.yml 
+ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy"
+cat templates/network/resolv.conf.j2 
+vi roles/common/handlers/main.yml 
+vi roles/common/tasks/main.yml 

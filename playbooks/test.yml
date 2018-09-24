@@ -1,0 +1,12 @@
+---
+#playbook.yml
+- name: testing connection types
+  hosts: all
+  user: sysadmin
+  environment:
+    GROUPNAME: vm-deploy
+  tasks:
+    - name: template out hostfile
+      template:
+         src: template.j2
+         dest: "/tmp/{{ inventory_hostname }}"

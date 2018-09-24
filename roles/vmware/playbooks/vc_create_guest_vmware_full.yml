@@ -25,7 +25,7 @@
         name: "{{ target }}"
         state: present
         disk:
-          - size_gb: 8
+          - size_gb: 10
             type: thin
             datastore: "{{ datastore }}"
         networks: 

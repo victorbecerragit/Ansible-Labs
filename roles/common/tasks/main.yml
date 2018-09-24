@@ -1,14 +1,15 @@
 ---
+ - name: comment /etc/motd
+   copy:
+     content: "{{ ansible_fqdn }} Managed by Ansible\n"
+     dest: /etc/motd
+   tags: common
  - name: setup user passwordless on target
    lineinfile:
       path: /etc/sudoers
       state: present
       regexp: '^%sysadmin\s'
       line: '%sysadmin ALL=(ALL) NOPASSWD: ALL'
-   tags: common
- - name: update the system
-   yum: name=* state=latest
-   #when: ansible_os_family == "Redhat"
    tags: common
  - name: Enable AddressFamily inet on /etc/ssh/sshd_config , required to disable ipv6
    lineinfile:
@@ -31,13 +32,40 @@
      state: present
      regexp: '{{ ansible_default_ipv4.address }}\s'
      line: '{{ ansible_default_ipv4.address }}    {{ ansible_fqdn }}'
+   ignore_errors: yes
+   tags: common
+ - name: Update /etc/sysconfig/network-script/ifcfg
+   template:
+     src: "{{ if_template }}"
+     dest: /etc/sysconfig/network-scripts/ifcfg-ens192
+     backup: yes
+   tags: common
+ - name: Update /etc/sysconfig/network file on target
+   template:
+     src: "{{ net_template }}"
+     dest: /etc/sysconfig/network
+     backup: yes
+   ignore_errors: yes
+ - name: Update /etc/resolv.conf file on target
+   template:
+     src: "{{ dns_template }}"
+     dest: /etc/resolv.conf
+     backup: yes
+   tags: common
+ - name: restart network
+   shell: 'sudo systemctl restart network'
+   async: 2
+   poll: 2
+
    tags: common
  - name: Install required pkgs
    yum:
      name:
+       - "{{ delta_pkg }}"
        - "{{ perl_pkg }}"
        - "{{ bindu_pkg }}"
        - "{{ net_pkg }}"
+       - "{{ git_pkg }}"
      state: latest
    tags: common
  - name: Uninstall dhcp packages
@@ -50,22 +78,13 @@
  - name: Disable NetworkManager service
    service: name=NetworkManager state=stopped enabled=no
    tags: common
- - name: Update /etc/sysconfig/network file on target
-   template:
-     src: "{{ net_template }}"
-     dest: /etc/sysconfig/network
-     backup: yes
-   tags: common
- - name: Update /etc/resolv.conf file on target
-   template:
-     src: "{{ dns_template }}"
-     dest: /etc/resolv.conf
-     backup: yes
-   tags: common
  - name: copy current image kernel
    shell:
      'sudo cp /boot/initramfs-`uname -r`.img /boot/initramfs-`uname -r`.img.backup'
    tags: common
+ - name: update the system
+   yum: name=* state=latest
+   tags: common 
  - name : compile new kernel after removed Nmcli and dhcp client
    shell:
      'sudo dracut -fv'
@@ -87,4 +106,3 @@
    tags: common
  - ping: 
    tags: common
-
