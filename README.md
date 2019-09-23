@@ -19,23 +19,30 @@ vm-05	192.168.1.54
 
 
 Create all VMs.
-ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-deploy
+
+$ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-deploy
 
 Delete all VMs created from deploy.
-ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete -vvv
+
+$ansible-playbook -i dev-hosts roles/vmware/run.yml -t full-delete -vvv
 
 Deploy a particular VM.
-ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.50' -vv
 
-List all TAGS 
-ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common'  -vv
+$ansible-playbook -i dev-hosts roles/vmware/run.yml --tags 'full-deploy, common' --limit='192.168.1.50' -vv
 
-Deploy by TAG
-ansible-playbook -i dev-hosts roles/common/run.yml --tags common -l vms -v
+List all TAGS. 
+
+$ansible-playbook  roles/vmware/run.yml --tags 'full-deploy, common'  -vv
+
+Deploy by TAG.
+
+$ansible-playbook -i dev-hosts roles/common/run.yml --tags common -l vms -v
 
 Manual deploy applying custom configuration for linux.
-ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy"
 
-Full deploy
-ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "full-deploy"
+$ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "manual-deploy"
+
+Full deploy.
+
+$ansible-playbook -i dev-hosts -e target=openstack -e IP=192.168.1.9 roles/vmware/run.yml --tags "full-deploy"
 
